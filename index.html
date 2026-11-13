@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LC Marketing · Lucas Eduardo</title>
+<meta name="description" content="LC Marketing: social media, produção de vídeo, design criativo e tráfego pago. Sua marca vista, lembrada e valorizada.">
+<meta name="theme-color" content="#060607">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Lexend:wght@300;400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060607;--bg2:#0E0E10;--bg3:#16161A;--fg:#F4F4F1;--mut:#9C9CA2;--line:rgba(255,255,255,.13);--paper:#ECECE8;--ink:#0A0A0B;--mut2:#5F5F63;--r:4px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:300 17px/1.6 "Lexend",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+.wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:"Lexend";font-weight:300;line-height:1.02;letter-spacing:-.025em}
+h1 b,h2 b,h3 b{font-weight:700}
+.l{display:block;white-space:nowrap}
+mark{background:var(--fg);color:var(--ink);padding:0 .14em;font-weight:700}
+.kick{display:inline-flex;align-items:center;gap:12px;font:400 11px "Michroma";letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.kick::before{content:"";width:9px;height:9px;background:currentColor;transform:rotate(45deg)}
+section{padding:120px 0}
+.head{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;margin-bottom:60px}
+.head h2{font-size:clamp(46px,5.8vw,84px);margin-top:20px}
+.head p{color:var(--mut);max-width:440px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font:500 15px "Lexend";transition:background .2s,color .2s,border-color .2s,transform .15s;border:0}
+.btn:active{transform:scale(.97)}
+.btn svg{width:18px;height:18px;flex:none}
+.bw{background:var(--fg);color:var(--ink)}
+.bw:hover{background:#fff}
+.bo{border:1px solid rgba(255,255,255,.35);color:var(--fg)}
+.bo:hover{border-color:var(--fg)}
+.bk{background:var(--ink);color:var(--fg)}
+.bk:hover{background:#26262a}
+
+/* moldura de seleção (motivo dos posts da LC) */
+.sel{position:relative;border:1px solid rgba(255,255,255,.55)}
+.sel>i{position:absolute;width:11px;height:11px;background:var(--fg);border-radius:50%;z-index:3}
+.sel>i:nth-of-type(1){left:-6px;top:-6px}.sel>i:nth-of-type(2){right:-6px;top:-6px}.sel>i:nth-of-type(3){left:-6px;bottom:-6px}.sel>i:nth-of-type(4){right:-6px;bottom:-6px}
+.sel>i:nth-of-type(5){left:50%;top:-6px;margin-left:-5px}.sel>i:nth-of-type(6){left:50%;bottom:-6px;margin-left:-5px}
+.sel.dk{border-color:rgba(10,10,11,.5)}
+.sel.dk>i{background:var(--ink)}
+
+/* logo */
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:34px;height:34px;flex:none}
+.logo b{font:400 15px/1 "Michroma";letter-spacing:.14em}
+
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(6,6,7,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav nav{display:flex;gap:34px;font-size:14.5px;color:#c9c9cc;font-weight:400}
+.nav nav a:hover{color:#fff}
+.nav .btn{padding:11px 18px;font-size:14px}
+
+/* hero */
+.hero{padding:150px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 78% 40%,rgba(255,255,255,.07),transparent 70%);pointer-events:none}
+.hero-g{display:grid;grid-template-columns:.82fr 1.18fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(54px,6.4vw,96px);margin:26px 0 28px}
+.hero p.sub{font-size:19px;color:#c9c9cc;max-width:500px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.reel{padding:0}
+.reel video,.reel img.poster{width:100%;aspect-ratio:16/9;object-fit:cover;background:#111}
+.reel .cap{position:absolute;left:0;right:0;bottom:-38px;display:flex;justify-content:space-between;font:400 10.5px "Michroma";letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.reel .live{position:absolute;left:16px;top:16px;z-index:2;display:flex;align-items:center;gap:8px;background:rgba(6,6,7,.72);backdrop-filter:blur(6px);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:400}
+.reel .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff3b30;box-shadow:0 0 0 4px rgba(255,59,48,.25)}
+.svc{display:flex;gap:10px;flex-wrap:wrap;margin-top:44px}
+.svc span{border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:13.5px;color:#d7d7d9;font-weight:400}
+
+/* trilogia */
+.tri{padding:0;border-block:1px solid var(--line)}
+.tri-g{display:grid;grid-template-columns:repeat(3,1fr)}
+.tri-g div{padding:46px 34px 50px 0}
+.tri-g div+div{padding-left:34px;border-left:1px solid var(--line)}
+.tri-g .w{font:400 clamp(40px,4.6vw,66px)/1 "Anton";text-transform:uppercase;letter-spacing:.01em}
+.tri-g .w em{font-style:normal;color:transparent;-webkit-text-stroke:1.2px var(--fg)}
+.tri-g p{color:var(--mut);margin-top:16px;max-width:330px;font-size:16px}
+.tri-g small{display:block;margin-top:18px;font:400 10.5px "Michroma";letter-spacing:.16em;text-transform:uppercase;color:#d7d7d9}
+
+/* trabalhos */
+.trab{background:var(--paper);color:var(--ink)}
+.trab .kick{color:var(--mut2)}
+.trab .head p{color:var(--mut2)}
+.job{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:56px 0;border-top:1px solid rgba(10,10,11,.15)}
+.job:first-of-type{border-top:0;padding-top:0}
+.job .ttl .n{font:400 11px "Michroma";letter-spacing:.18em;color:var(--mut2)}
+.job h3{font-size:clamp(34px,3.4vw,50px);margin:14px 0 10px}
+.job .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.job .tags span{border:1px solid rgba(10,10,11,.22);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:400}
+.job p{color:var(--mut2);margin-top:14px;max-width:470px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:34px;margin-top:28px}
+.facts b{display:block;font:400 34px/1 "Anton"}
+.facts span{font-size:13px;color:var(--mut2)}
+.j2{grid-template-columns:1fr}
+.j2 .ttl{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end}
+.j2 .ttl p{margin-top:0}
+.film{grid-column:1/-1;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:12px;margin-top:8px}
+.film figure{position:relative;overflow:hidden;border-radius:var(--r);background:#222}
+.film figure:first-child{grid-row:span 2}
+.film img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.film figure:hover img{transform:scale(1.04)}
+.film figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,10,11,.8);color:#fff;font-size:12.5px;padding:5px 10px;border-radius:999px;font-weight:400}
+.posts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.posts figure{border-radius:var(--r);overflow:hidden;box-shadow:0 30px 50px -30px rgba(0,0,0,.6)}
+.posts img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.posts figure:nth-child(even){transform:translateY(34px)}
+.phones{display:flex;gap:18px;justify-content:flex-end}
+.phone{width:min(31%,230px);border-radius:26px;background:#0b0b0c;padding:8px;box-shadow:0 30px 50px -24px rgba(0,0,0,.55)}
+.phone div{position:relative;border-radius:19px;overflow:hidden;aspect-ratio:9/16}
+.phone img{width:100%;height:100%;object-fit:cover}
+.phone span{position:absolute;left:10px;right:10px;bottom:10px;color:#fff;font-size:12.5px;line-height:1.35;font-weight:400;text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.phone div::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.65))}
+.phone span{z-index:2}
+.phone .pl{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(255,255,255,.85);z-index:2;display:grid;place-items:center}
+.phone .pl::before{content:"";border-left:13px solid #000;border-block:8px solid transparent;margin-left:4px}
+
+/* serviços */
+.sv-list{border-top:1px solid var(--line)}
+.sv{display:grid;grid-template-columns:90px 1fr 1fr 220px;gap:30px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line);position:relative}
+.sv .n{font:400 12px "Michroma";letter-spacing:.14em;color:var(--mut)}
+.sv h3{font-size:clamp(32px,3.2vw,46px)}
+.sv p{color:var(--mut);font-size:16px}
+.sv ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.sv li{font-size:12.5px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:#d7d7d9;font-weight:400}
+.sv figure{border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;filter:grayscale(1) contrast(1.05);transition:filter .5s}
+.sv:hover figure{filter:none}
+.sv figure img{width:100%;height:100%;object-fit:cover}
+
+/* perfil (coisa viva) */
+.pf{background:var(--bg2)}
+.pf-g{display:grid;grid-template-columns:1fr 430px;gap:70px;align-items:start}
+.ctl{display:grid;gap:26px}
+.lb{display:block;font:400 10.5px "Michroma";letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+.fld input{width:100%;background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:17px;font-weight:400;outline:none}
+.fld input:focus{border-color:var(--fg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:10px 16px;font-size:15px;font-weight:400;transition:background .15s,color .15s,border-color .15s}
+.chips button:hover{border-color:rgba(255,255,255,.5)}
+.chips button[aria-pressed=true]{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.plan{border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:var(--bg)}
+.plan div span{display:block;font-size:12.5px;color:var(--mut)}
+.plan div b{font:400 40px/1.05 "Anton"}
+.plan p{grid-column:1/-1;font-size:13.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:12px}
+.send{justify-self:start}
+
+.mock{width:100%;max-width:430px;justify-self:center;border-radius:44px;background:#000;padding:12px;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 50px 90px -40px rgba(255,255,255,.12);position:sticky;top:100px}
+.scr{border-radius:33px;background:#000;overflow:hidden;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:400}
+.ig-top{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 10px;font-weight:700;font-size:17px}
+.ig-top small{font-weight:400;opacity:.6;font-size:12px}
+.ig-h{display:grid;grid-template-columns:86px 1fr;gap:18px;align-items:center;padding:4px 18px 10px}
+.av{width:86px;height:86px;border-radius:50%;padding:3px;background:linear-gradient(45deg,#777,#fff,#777)}
+.av div{width:100%;height:100%;border-radius:50%;background:#0d0d0e;border:3px solid #000;display:grid;place-items:center;font:400 22px "Michroma";letter-spacing:.04em}
+.st{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font-size:12px;opacity:.95}
+.st b{display:block;font-size:16px}
+.bio{padding:0 18px 12px;font-size:13px;line-height:1.45}
+.bio b{display:block;font-size:13.5px}
+.bio .ct{opacity:.6}
+.bio a{color:#e0f1ff}
+.ig-btn{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 18px 14px}
+.ig-btn span{background:#262628;border-radius:8px;text-align:center;font-size:13px;font-weight:600;padding:7px}
+.ig-tabs{display:flex;justify-content:space-around;border-top:1px solid #222;padding:9px 0 7px}
+.ig-tabs i{width:18px;height:18px;border:2px solid #fff;border-radius:3px;opacity:.5}
+.ig-tabs i:first-child{opacity:1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.t{position:relative;aspect-ratio:4/5;overflow:hidden;background:#0d0d0e;display:flex;flex-direction:column;justify-content:center;padding:10px;font-family:"Lexend";font-weight:300;font-size:11px;line-height:1.15}
+.t b{font-weight:700}
+.t .bx{position:absolute;inset:14% 12%;border:1px solid rgba(255,255,255,.45)}
+.t .bx::before,.t .bx::after{content:"";position:absolute;width:5px;height:5px;background:#fff;border-radius:50%;top:-3px;left:-3px}
+.t .bx::after{left:auto;right:-3px;top:auto;bottom:-3px}
+.t.w{background:#f1f1ee;color:#0a0a0b}
+.t.ph{padding:0}
+.t.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.t.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.75))}
+.t.ph span{position:absolute;left:8px;right:8px;bottom:8px;z-index:2;color:#fff}
+.t .rl{position:absolute;right:6px;top:6px;width:13px;height:13px;border:1.6px solid #fff;border-radius:3px;z-index:2}
+.t .big{font:400 21px/1 "Anton";text-transform:uppercase;letter-spacing:.01em}
+.t .big.box{display:inline-block;background:#fff;color:#000;padding:3px 5px 1px;margin-top:4px;align-self:flex-start}
+.t .mk{position:absolute;right:8px;bottom:8px;width:14px;height:14px}
+.t.c{align-items:center;text-align:center}
+.t .nm{font:400 9.5px "Michroma";letter-spacing:.12em;text-transform:uppercase;margin-top:7px}
+
+/* processo */
+.pr{background:var(--paper);color:var(--ink)}
+.pr .kick{color:var(--mut2)}
+.pr .head p{color:var(--mut2)}
+.pr-g{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pr-g>div{padding:30px 24px 30px;background:#fff;border-radius:6px;position:relative}
+.pr-g .n{font:400 58px/1 "Anton";color:transparent;-webkit-text-stroke:1.3px var(--ink)}
+.pr-g h3{font-size:28px;font-weight:600;margin:20px 0 10px;letter-spacing:-.02em}
+.pr-g p{color:var(--mut2);font-size:15.5px}
+
+/* lucas */
+.lu-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.lu-ph{padding:18px}
+.lu-ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.lu h2{font-size:clamp(42px,4.8vw,70px);margin:20px 0 24px}
+.lu p{color:#c9c9cc;max-width:520px}
+.lu p+p{margin-top:14px}
+.lu ul{list-style:none;margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.lu li{background:var(--bg);padding:16px 18px;font-size:15px}
+.lu li b{display:block;font:400 10.5px "Michroma";letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin-bottom:6px;font-weight:400}
+
+/* final */
+.fin{padding:140px 0;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--line)}
+.fin::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 50% 60%,rgba(255,255,255,.08),transparent 70%)}
+.fin .wrap{position:relative}
+.fin h2{font-size:clamp(40px,5vw,74px)}
+.fin .lem{display:inline-block;margin-top:18px;background:var(--fg);color:var(--ink);font:400 clamp(70px,11vw,170px)/1 "Anton";text-transform:uppercase;padding:.06em .18em 0;transform:rotate(-2deg)}
+.fin p{color:#c9c9cc;max-width:540px;margin:40px auto 0}
+.fin .ctas{justify-content:center}
+
+footer{border-top:1px solid var(--line);padding:50px 0 36px;font-size:14.5px;color:var(--mut)}
+.ft{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.ft .cols{display:flex;gap:56px;flex-wrap:wrap}
+.ft b{display:block;color:var(--fg);font-weight:500;margin-bottom:6px}
+.ft a:hover{color:var(--fg)}
+.ft2{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font:400 10px "Michroma";letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+.mbar{display:none}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:1080px){
+  .nav nav{display:none}
+  .hero-g{grid-template-columns:1fr;gap:50px}
+  .head{grid-template-columns:1fr;gap:18px}
+  .job{grid-template-columns:1fr;gap:30px}
+  .j2 .ttl{grid-template-columns:1fr;gap:14px}
+  .phones{justify-content:flex-start}
+  .sv{grid-template-columns:60px 1fr 1fr}
+  .sv figure{display:none}
+  .pf-g{grid-template-columns:1fr}
+  .mock{position:relative;top:0;order:-1}
+  .pr-g{grid-template-columns:1fr 1fr}
+  .lu-g{grid-template-columns:1fr;gap:40px}
+  .lu-ph{max-width:480px}
+}
+@media (max-width:640px){
+  body{font-size:16px;padding-bottom:76px}
+  .wrap{width:calc(100% - 32px)}
+  section{padding:84px 0}
+  .nav{height:64px}
+  .nav .btn{display:none}
+  .hero{padding:110px 0 80px}
+  .hero h1{font-size:11.2vw}
+  .hero p.sub{font-size:17px}
+  .head h2{font-size:11vw}
+  .tri-g{grid-template-columns:1fr}
+  .tri-g div,.tri-g div+div{padding:32px 0;border-left:0}
+  .tri-g div+div{border-top:1px solid var(--line)}
+  .film{grid-template-columns:1fr 1fr}
+  .film figure:first-child{grid-column:1/-1;grid-row:auto}
+  .posts{grid-template-columns:1fr 1fr}
+  .posts figure:nth-child(even){transform:translateY(24px)}
+  .phones{gap:10px}
+  .phone{width:33%;border-radius:18px;padding:5px}
+  .phone div{border-radius:14px}
+  .phone span{font-size:10.5px;left:7px;right:7px;bottom:7px}
+  .facts{gap:22px}
+  .facts b{font-size:28px}
+  .sv{grid-template-columns:1fr;gap:10px;padding:26px 0}
+  .plan{grid-template-columns:repeat(3,1fr);padding:16px}
+  .plan div b{font-size:32px}
+  .mock{border-radius:36px;padding:9px}
+  .scr{border-radius:28px}
+  .pr-g{grid-template-columns:1fr}
+  .lu ul{grid-template-columns:1fr}
+  .fin{padding:100px 0}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(6,6,7,.95);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:999px;font-size:15px;font-weight:500;border:1px solid rgba(255,255,255,.3)}
+  .mbar a:first-child{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+  .mbar svg{width:18px;height:18px}
+}
+</style>
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mk" viewBox="0 0 100 100"><path fill="currentColor" d="M50 4 96 50 50 96 34 80 64 50 34 20Z"/><path fill="currentColor" d="M8 50 30 28 52 50 30 72Z"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="LC Marketing"><svg><use href="#mk"/></svg><b>LC MARKETING</b></a>
+    <nav aria-label="Seções"><a href="#trabalhos">Trabalhos</a><a href="#servicos">Serviços</a><a href="#perfil">Seu perfil</a><a href="#lucas">Sobre</a></nav>
+    <a class="btn bw wa-link" href="https://wa.me/5589994372315" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar com o Lucas</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-g">
+    <div>
+      <span class="kick rv">Social media · Vídeo · Design · Tráfego</span>
+      <h1 class="rv"><span class="l">Sua marca</span><span class="l"><b>vista, lembrada</b></span><span class="l">e <mark>valorizada.</mark></span></h1>
+      <p class="sub rv">A LC Marketing cuida da presença da sua empresa nas redes: conteúdo, vídeo, design e anúncios pagos, com estratégia por trás de cada post.</p>
+      <div class="ctas rv">
+        <a class="btn bw wa-link" href="https://wa.me/5589994372315" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Falar com o Lucas</a>
+        <a class="btn bo" href="#perfil">Montar meu perfil</a>
+      </div>
+    </div>
+    <div class="reel sel rv"><i></i><i></i><i></i><i></i><i></i><i></i>
+      <video id="vid" autoplay muted loop playsinline preload="metadata" poster="img/cena-0150.jpg" aria-label="Trecho de vídeo institucional produzido pela LC Marketing"><source src="img/showreel.webm" type="video/webm"></video>
+      <span class="live">Vídeo institucional da LC</span>
+      <div class="cap"><span>Showreel</span><span>LCMKT2026©</span></div>
+    </div>
+  </div>
+  <div class="wrap svc rv"><span>Gestão de Instagram</span><span>Produção de vídeo</span><span>Reels</span><span>Vídeo institucional</span><span>Identidade visual</span><span>Posts e carrosséis</span><span>Anúncios no Meta</span><span>Estratégia de conteúdo</span></div>
+</section>
+
+<section class="tri" aria-label="O que a LC faz pela sua marca">
+  <div class="wrap tri-g">
+    <div class="rv"><span class="w">Vista<em>.</em></span><p>Anúncios bem segmentados e um design que para o dedo de quem está rolando o feed.</p><small>Tráfego pago · Design</small></div>
+    <div class="rv"><span class="w">Lembrada<em>.</em></span><p>Constância de conteúdo, com linguagem e visual que deixam a marca reconhecível em qualquer post.</p><small>Social media · Estratégia</small></div>
+    <div class="rv"><span class="w">Valorizada<em>.</em></span><p>Vídeos que mostram a empresa de verdade: o espaço, as pessoas e o cuidado com o cliente.</p><small>Produção de vídeo</small></div>
+  </div>
+</section>
+
+<section class="trab" id="trabalhos">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick rv">Trabalhos</span><h2 class="rv"><span class="l">Por trás de cada post,</span><span class="l"><b>estratégia.</b></span></h2></div>
+      <p class="rv">Alguns trabalhos recentes da LC Marketing, publicados no Instagram da agência e dos clientes.</p>
+    </div>
+
+    <article class="job">
+      <div class="ttl rv">
+        <span class="n">01 · VÍDEO INSTITUCIONAL</span>
+        <h3>Do showroom <b>à fábrica.</b></h3>
+        <p>Vídeo para uma empresa de móveis planejados: o dono recebe o cliente no showroom, mostra os ambientes e leva a câmera até a fábrica. Roteiro, gravação, edição, cor e legendas pela LC.</p>
+        <div class="facts"><div><b>2:13</b><span>de vídeo</span></div><div><b>2</b><span>locações</span></div><div><b>16:9</b><span>e versão para reels</span></div></div>
+      </div>
+      <div class="phones rv">
+        <div class="phone"><div><img src="img/reel-institucional.jpg" alt="Capa do reel do vídeo institucional" loading="lazy"><i class="pl"></i><span>Mais um vídeo entregue com sucesso</span></div></div>
+        <div class="phone"><div><img src="img/reel-canelas.jpg" alt="Medalhas do Desafio Canela's sobre a mesa" loading="lazy"><i class="pl"></i><span>Desafio Canela's · entrega das medalhas</span></div></div>
+        <div class="phone"><div><img src="img/reel-color.jpg" alt="Antes e depois de correção de cor numa paisagem" loading="lazy"><i class="pl"></i><span>O poder do color grading</span></div></div>
+      </div>
+      <div class="film rv">
+        <figure><img src="img/cena-0150.jpg" alt="Dono da empresa de móveis atende cliente no escritório do showroom" loading="lazy"><figcaption>Atendimento no showroom</figcaption></figure>
+        <figure><img src="img/cena-0330.jpg" alt="Cristaleira iluminada sendo apresentada ao cliente" loading="lazy"><figcaption>Ambientes</figcaption></figure>
+        <figure><img src="img/cena-0200.jpg" alt="Cliente avalia amostra de painel ripado" loading="lazy"><figcaption>Detalhe do produto</figcaption></figure>
+        <figure><img src="img/cena-0055.jpg" alt="Caminhada pelo showroom com quarto montado" loading="lazy"><figcaption>Câmera em movimento</figcaption></figure>
+        <figure><img src="img/cena-0890.jpg" alt="Fábrica de móveis com máquinas de corte" loading="lazy"><figcaption>Na fábrica</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="job j2">
+      <div class="ttl rv">
+        <div><span class="n">02 · DESIGN PARA REDES</span>
+        <h3>Feed com <b>cara de marca.</b></h3></div>
+        <div><p>Posts, carrosséis e peças de campanha com a mesma linguagem visual: preto e branco, tipografia forte e uma ideia por peça. É o mesmo cuidado que a LC leva para o perfil de cada cliente.</p>
+        <div class="tags"><span>Posts estáticos</span><span>Carrosséis</span><span>Capas de reels</span><span>Fotomontagem</span></div></div>
+      </div>
+      <div class="posts rv" style="grid-column:1/-1">
+        <figure><img src="img/post-bemvindo.jpg" alt="Post de boas-vindas da LC Marketing listando os serviços" loading="lazy"></figure>
+        <figure><img src="img/post-lucas.jpg" alt="Post com Lucas Eduardo sentado e o logo da LC Marketing" loading="lazy"></figure>
+        <figure><img src="img/post-megafone.jpg" alt="Post 'Sua marca merece ser vista' com megafone em 3D" loading="lazy"></figure>
+        <figure><img src="img/post-lembrada.jpg" alt="Post 'Sua empresa está nas redes sociais. Mas está sendo lembrada?'" loading="lazy"></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick rv">Serviços</span><h2 class="rv"><span class="l">Tudo que a sua marca</span><span class="l"><b>precisa nas redes.</b></span></h2></div>
+      <p class="rv">Você pode contratar um serviço só ou deixar a presença digital inteira com a LC.</p>
+    </div>
+    <div class="sv-list">
+      <article class="sv rv"><span class="n">01</span><h3><b>Social</b> media</h3><div><p>Planejamento do mês, criação e publicação dos posts, legendas e acompanhamento do perfil.</p><ul><li>Calendário</li><li>Legendas</li><li>Stories</li></ul></div><figure><img src="img/post-bemvindo.jpg" alt="" loading="lazy"></figure></article>
+      <article class="sv rv"><span class="n">02</span><h3>Produção de <b>vídeo</b></h3><div><p>Reels, vídeo institucional e cobertura de eventos, do roteiro à edição com cor e legendas.</p><ul><li>Reels</li><li>Institucional</li><li>Eventos</li></ul></div><figure><img src="img/cena-0285.jpg" alt="" loading="lazy"></figure></article>
+      <article class="sv rv"><span class="n">03</span><h3>Design <b>criativo</b></h3><div><p>Identidade visual, posts, carrosséis e peças que deixam a marca reconhecível de longe.</p><ul><li>Identidade</li><li>Carrosséis</li><li>Campanhas</li></ul></div><figure><img src="img/post-megafone.jpg" alt="" loading="lazy"></figure></article>
+      <article class="sv rv"><span class="n">04</span><h3>Tráfego <b>pago</b></h3><div><p>Anúncios no Instagram e no Facebook para levar a sua empresa a quem está perto e tem interesse.</p><ul><li>Meta Ads</li><li>Público local</li><li>Relatórios</li></ul></div><figure><img src="img/post-lembrada.jpg" alt="" loading="lazy"></figure></article>
+    </div>
+  </div>
+</section>
+
+<section class="pf" id="perfil">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick rv">Seu perfil com a LC</span><h2 class="rv"><span class="l">Veja o seu feed</span><span class="l"><b>antes de começar.</b></span></h2></div>
+      <p class="rv">Escreva o nome da sua empresa, escolha o ramo e o objetivo. O perfil ao lado mostra um exemplo do visual, e o pedido vai pronto para o WhatsApp do Lucas.</p>
+    </div>
+    <div class="pf-g">
+      <div class="ctl rv">
+        <label class="fld"><span class="lb">Nome da empresa</span><input id="nm" type="text" maxlength="24" value="Sua Empresa" autocomplete="organization"></label>
+        <div><span class="lb">Ramo</span><div class="chips" data-k="seg">
+          <button type="button" aria-pressed="true" data-v="loja">Loja</button><button type="button" aria-pressed="false" data-v="food">Restaurante</button><button type="button" aria-pressed="false" data-v="saude">Saúde e estética</button><button type="button" aria-pressed="false" data-v="fit">Academia</button><button type="button" aria-pressed="false" data-v="serv">Serviços</button>
+        </div></div>
+        <div><span class="lb">Objetivo principal</span><div class="chips" data-k="obj">
+          <button type="button" aria-pressed="true" data-v="vista">Ser vista</button><button type="button" aria-pressed="false" data-v="lembrada">Ser lembrada</button><button type="button" aria-pressed="false" data-v="vender">Vender mais</button>
+        </div></div>
+        <div><span class="lb">O que você quer da LC</span><div class="chips multi" data-k="svc">
+          <button type="button" aria-pressed="true" data-v="Social media">Social media</button><button type="button" aria-pressed="true" data-v="Vídeo">Vídeo</button><button type="button" aria-pressed="false" data-v="Design">Design</button><button type="button" aria-pressed="false" data-v="Tráfego pago">Tráfego pago</button>
+        </div></div>
+        <div class="plan" aria-live="polite">
+          <div><span>Posts no mês</span><b id="pPosts">12</b></div>
+          <div><span>Reels no mês</span><b id="pReels">4</b></div>
+          <div><span>Anúncios</span><b id="pAds">—</b></div>
+          <p id="pTxt">Exemplo de mês. O plano de verdade o Lucas monta com você, depois de conhecer a empresa.</p>
+        </div>
+        <a class="btn bw send" id="send" href="https://wa.me/5589994372315" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Enviar para o Lucas</a>
+      </div>
+
+      <div class="mock rv" aria-label="Exemplo de perfil no Instagram">
+        <div class="scr">
+          <div class="ig-top"><span id="hd">suaempresa</span><small>Exemplo</small></div>
+          <div class="ig-h">
+            <div class="av"><div id="ini">SE</div></div>
+            <div class="st"><div><b id="sPosts">12</b>posts</div><div><b>—</b>seguidores</div><div><b>—</b>seguindo</div></div>
+          </div>
+          <div class="bio"><b id="bNm">Sua Empresa</b><span class="ct" id="bCat">Loja</span><br><span id="bTxt">Novidades toda semana.</span><br><a href="#perfil">wa.me/sua-empresa</a></div>
+          <div class="ig-btn"><span>Seguir</span><span>Mensagem</span></div>
+          <div class="ig-tabs"><i></i><i></i><i></i></div>
+          <div class="grid" id="grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pr">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick rv">Como funciona</span><h2 class="rv"><span class="l">Da conversa</span><span class="l"><b>ao feed no ar.</b></span></h2></div>
+      <p class="rv">Um processo simples, com você aprovando cada passo.</p>
+    </div>
+    <div class="pr-g">
+      <div class="rv"><span class="n">01</span><h3>Diagnóstico</h3><p>Uma conversa para entender a empresa, o público e como está o perfil hoje.</p></div>
+      <div class="rv"><span class="n">02</span><h3>Estratégia</h3><p>Linha visual, temas do mês e calendário de posts para você aprovar.</p></div>
+      <div class="rv"><span class="n">03</span><h3>Produção</h3><p>Gravação, design e edição dos conteúdos, com as legendas prontas.</p></div>
+      <div class="rv"><span class="n">04</span><h3>Resultados</h3><p>Publicação, anúncios e acompanhamento para ajustar o que funciona melhor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="lu" id="lucas">
+  <div class="wrap lu-g">
+    <div class="lu-ph sel rv"><i></i><i></i><i></i><i></i><i></i><i></i><img src="img/post-lucas.jpg" alt="Lucas Eduardo, fundador da LC Marketing" loading="lazy"></div>
+    <div>
+      <span class="kick rv">Quem faz</span>
+      <h2 class="rv"><span class="l">Lucas Eduardo,</span><span class="l"><b>LC Marketing.</b></span></h2>
+      <p class="rv">A LC nasceu para transformar ideias em conteúdo que valoriza marcas e aproxima empresas do seu público. O Lucas acompanha cada projeto de perto, da primeira conversa à entrega.</p>
+      <p class="rv">Na prática, isso quer dizer uma pessoa que grava, edita, cria e anuncia, e que conhece a sua empresa pelo nome.</p>
+      <ul class="rv"><li><b>Faz</b>Vídeo, design, social media e tráfego</li><li><b>Atende</b>Pelo WhatsApp e pelo Instagram</li><li><b>Clientes</b>Comércio, eventos e empresas locais</li><li><b>Instagram</b><a href="https://www.instagram.com/_lcmarketing.mkg/" target="_blank" rel="noopener">@_lcmarketing.mkg</a></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="fin" id="contato">
+  <div class="wrap">
+    <h2 class="rv"><span class="l">Sua empresa está nas redes.</span><span class="l">Mas está sendo</span></h2>
+    <span class="lem rv">lembrada?</span>
+    <p class="rv">Conte para o Lucas o que a sua empresa faz e onde ela está hoje. Ele responde com uma ideia de plano para o seu perfil.</p>
+    <div class="ctas rv">
+      <a class="btn bw wa-link" href="https://wa.me/5589994372315" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Chamar no WhatsApp</a>
+      <a class="btn bo" href="https://www.instagram.com/_lcmarketing.mkg/" target="_blank" rel="noopener">Ver o Instagram</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <span class="logo"><svg><use href="#mk"/></svg><b>LC MARKETING</b></span>
+      <div class="cols">
+        <div><b>WhatsApp</b><a href="https://wa.me/5589994372315" target="_blank" rel="noopener">(89) 99437-2315</a></div>
+        <div><b>Instagram</b><a href="https://www.instagram.com/_lcmarketing.mkg/" target="_blank" rel="noopener">@_lcmarketing.mkg</a></div>
+      </div>
+    </div>
+    <div class="ft2"><span>© LC Marketing · Lucas Eduardo</span><span>LCMKT2026©</span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Ações rápidas"><a class="wa-link" href="https://wa.me/5589994372315" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>WhatsApp</a><a href="#perfil">Meu perfil</a></nav>
+
+<script>
+(function(){
+  var WA="5589994372315";
+  var vid=document.getElementById("vid");
+  if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches&&vid){vid.removeAttribute("autoplay");vid.pause()}
+  var S={seg:"loja",obj:"vista",svc:["Social media","Vídeo"]};
+  var SEG={
+    loja:{cat:"Loja",bio:"Novidades toda semana · Entregamos na cidade",a:"Chegou",b:"novidade",c:"Vitrine da semana",d:"Peça já a sua",img:"img/cena-0330.jpg"},
+    food:{cat:"Restaurante",bio:"Almoço e jantar · Peça pelo WhatsApp",a:"Hoje tem",b:"prato do dia",c:"Bastidores da cozinha",d:"Reserve a sua mesa",img:"img/cena-0285.jpg"},
+    saude:{cat:"Saúde e beleza",bio:"Cuidado de verdade · Agende sua avaliação",a:"Antes e",b:"depois",c:"Conheça o espaço",d:"Agende agora",img:"img/cena-0055.jpg"},
+    fit:{cat:"Academia",bio:"Treino com acompanhamento · Aula experimental",a:"Treino do",b:"dia",c:"Por dentro da academia",d:"Aula experimental",img:"img/cena-0890.jpg"},
+    serv:{cat:"Prestador de serviço",bio:"Atendimento rápido · Orçamento sem compromisso",a:"Como",b:"trabalhamos",c:"Obra entregue",d:"Peça seu orçamento",img:"img/cena-0150.jpg"}
+  };
+  var OBJ={vista:{p:12,r:4,txt:"Foco em alcance: anúncios para o público da região e posts que chamam atenção no feed."},lembrada:{p:16,r:6,txt:"Foco em constância: conteúdo toda semana com o mesmo visual, para a marca ficar na memória."},vender:{p:12,r:6,txt:"Foco em venda: ofertas, provas do trabalho e anúncios com botão direto para o WhatsApp."}};
+  function $(i){return document.getElementById(i)}
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function handle(n){return(n.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,""))||"suaempresa"}
+  function ini(n){var w=n.trim().split(/\s+/).filter(Boolean);return((w[0]||"S")[0]+(w[1]?w[1][0]:(w[0]||"E")[1]||"")).toUpperCase()}
+  var MK='<svg class="mk" viewBox="0 0 100 100"><use href="#mk"/></svg>';
+  function tiles(n,s){
+    var N=esc(n);
+    return[
+      '<div class="t"><div class="bx"></div><span>Bem-vindo à</span><b>'+N+'</b>'+MK+'</div>',
+      '<div class="t ph"><img src="'+s.img+'" alt=""><i class="rl"></i><span>'+esc(s.c)+'</span></div>',
+      '<div class="t w c"><span class="big">'+esc(s.a)+'</span><span class="big box">'+esc(s.b)+'</span><span class="nm">'+N+'</span></div>',
+      '<div class="t w"><span>Sua marca merece ser <b>vista.</b></span><span class="nm">'+N+'</span></div>',
+      '<div class="t c"><svg viewBox="0 0 100 100" style="width:34%;color:#fff"><use href="#mk"/></svg><span class="nm">'+N+'</span></div>',
+      '<div class="t ph"><img src="img/cena-0410.jpg" alt=""><i class="rl"></i><span>Por trás das câmeras</span></div>',
+      '<div class="t ph"><img src="img/cena-0200.jpg" alt=""><span>'+esc(s.d)+'</span></div>',
+      '<div class="t"><span>Está nas redes.</span><span>Mas está sendo</span><span class="big box">lembrada?</span></div>',
+      '<div class="t w c"><span>'+esc(s.d)+'</span><b style="font-size:14px;margin-top:4px">'+N+'</b></div>'
+    ].join("");
+  }
+  function draw(){
+    var n=$("nm").value.trim()||"Sua Empresa",s=SEG[S.seg],o=OBJ[S.obj];
+    var hasV=S.svc.indexOf("Vídeo")>-1,hasT=S.svc.indexOf("Tráfego pago")>-1,hasS=S.svc.indexOf("Social media")>-1||S.svc.indexOf("Design")>-1;
+    var posts=hasS?o.p:0,reels=hasV?o.r:0;
+    $("hd").textContent=handle(n);$("ini").textContent=ini(n);$("bNm").textContent=n;$("bCat").textContent=s.cat;$("bTxt").textContent=s.bio;
+    $("grid").innerHTML=tiles(n,s);
+    $("pPosts").textContent=posts||"—";$("pReels").textContent=reels||"—";$("pAds").textContent=hasT?"Sim":"—";$("sPosts").textContent=posts+reels||"0";
+    $("pTxt").textContent=(S.svc.length?o.txt:"Escolha pelo menos um serviço.")+" Exemplo de mês: o plano de verdade o Lucas monta com você.";
+    var objN={vista:"Ser vista",lembrada:"Ser lembrada",vender:"Vender mais"}[S.obj];
+    var t="Olá, Lucas! Vi o site da LC Marketing e quero cuidar das redes da minha empresa.\n\nEmpresa: "+n+"\nRamo: "+s.cat+"\nObjetivo: "+objN+"\nServiços: "+(S.svc.join(", ")||"ainda decidindo")+"\n\nPodemos conversar?";
+    $("send").href="https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+  }
+  document.querySelectorAll(".chips").forEach(function(g){
+    g.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+      if(g.classList.contains("multi")){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")!=="true");S.svc=[].slice.call(g.querySelectorAll('[aria-pressed=true]')).map(function(x){return x.dataset.v})}
+      else{g.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});S[g.dataset.k]=b.dataset.v}
+      draw()});
+  });
+  $("nm").addEventListener("input",draw);
+  draw();
+  var msg=encodeURIComponent("Olá, Lucas! Vi o site da LC Marketing e quero conversar sobre as redes da minha empresa.");
+  document.querySelectorAll(".wa-link").forEach(function(a){a.href="https://wa.me/"+WA+"?text="+msg});
+  var rv=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});rv.forEach(function(el){io.observe(el)})}
+  else rv.forEach(function(el){el.classList.add("in")});
+})();
+</script>
+</body>
+</html>
